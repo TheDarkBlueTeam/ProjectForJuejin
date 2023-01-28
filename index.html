@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>点击圆盘，生成音乐</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div>
+    <br>
+    <p style="font: 200% 方正姚体; text-align: center;">尝试更换选用的古籍书目<br>来调整 中药(圆盘) 的种类</p>
+  </div>
+
+  <div class="controls">
+    <div class="control-group">
+      <button class="chord-left active" data-chord="major" style="font: 150% 方正姚体;">本草纲目</button>
+      <button class="chord-left" data-chord="minor" style="font: 150% 方正姚体;">温热论</button>
+      <button class="chord-left" data-chord="minor7th" style="font: 150% 方正姚体;">温疫论</button>
+      <button class="chord-left" data-chord="dominant7th" style="font: 150% 方正姚体;">千金要方</button>
+      <button class="chord-left" data-chord="sus2" style="font: 150% 方正姚体;">食疗本草</button>
+      <button class="chord-left" data-chord="sus4" style="font: 150% 方正姚体;">脾胃论</button>
+    </div>
+  </div>
+
+  <div id="output-controls">
+    <div class="output-control">
+      <label for="tempo-source-selector" style="font: 250% 方正姚体;">速度</label>
+      <input id="tempo-selector" type="range" min="10" max="200" step="1" value="90">
+      <span id="tempo-label" style="font: 150% 方正姚体;">90</span>
+    </div>
+  </div>
+
+  <div id="gcontrols">
+    <svg id="vis" viewBox="0 0 1000 1000">
+      <defs>
+        <radialGradient id="halo">
+          <stop offset="0%" stop-color="rgba(255, 255, 255, 0.5)" />
+          <stop offset="95%" stop-color="rgba(255, 255, 255, 0.5)" />
+          <stop offset="100%" stop-color="rgba(255, 255, 255, 0)" />
+        </radialGradient>
+      </defs>
+      <g id="vis-halos"></g>
+      <g id="vis-elements"></g>
+    </svg>
+  </div>
+
+  <div>
+    <br><br>
+    <p style="font: 200% 方正姚体; text-align: center;">各式圆盘：各味中药<br>生成乐曲：各个药方<br><br>请你选择不同的“中药”来生成不同的“药方”</p>
+  </div>
+  <br>
+
+  <div>
+    <button class="button" id="operationBtn">生成药方</button>
+  </div>
+  <div>
+    <br />
+  </div>
+  <!-- <div id="setmidlle">
+    <audio controls></audio>
+  </div> -->
+
+  <div id="loading">正在根据您输入的音频，<br>为您分发"中药"……</div>
+  <div id="generating" style="display: none">重新分药中……</div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@magenta/music@1.1.11/dist/magentamusic.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/webmidi@2.0.0/webmidi.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/web-animations-js@2.3.1/web-animations.min.js'></script>
+  <script src='https://cdn.rawgit.com/tambien/StartAudioContext/8da8637e/StartAudioContext.js'></script>
+  <script src='https://cdn.rawgit.com/danigb/tonal/9b6b1663/dist/tonal.min.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

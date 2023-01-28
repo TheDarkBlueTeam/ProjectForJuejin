@@ -1,0 +1,145 @@
+html,
+body,
+#container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0.25turn, #752525, #743702, #753525);
+  color: #f3f3f3;
+  font-family: sans-serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#vis {
+  margin: auto;
+  width: 100vmin;
+  height: 100vmin;
+  overflow: visible;
+}
+
+#gcontrols {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+.halo {
+  opacity: 0;
+}
+.note {
+  stroke-width: 0.5;
+  stroke: #151515;
+  fill: rgba(255, 255, 255, 1);
+  opacity: 0.4;
+}
+.hover .note {
+  opacity: 0.7;
+}
+.on .note {
+  fill: #e91e63;
+  opacity: 1;
+}
+
+.pointer-area {
+  stroke: none;
+  opacity: 0;
+}
+
+.controls {
+	margin: auto;
+  padding: 3%;
+}
+.control-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.controls button {
+  width: 100%;
+  height: 4vh;
+  margin: auto;
+  background: none;
+  color: white;
+  border: 2px solid white;
+}
+.controls button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.controls button.active {
+  background: white;
+  color: black;
+}
+
+#output-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.output-control {
+  padding: 3%;
+}
+.output-control label {
+  padding: 1;
+  font-size: 200%;
+}
+#tempo-label {
+  display: inline-block;
+  width: 30px;
+  font-size: 200%;
+}
+.midi-required {
+  display: none;
+}
+
+#generating,
+#loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+}
+
+.button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  margin: auto;
+  padding: 2.4% 4%;
+  font-size: 150%;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #003481;
+  border: none;
+  border-radius: 10%;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #0c1ab3}
+
+.button:active {
+  background-color: #012248;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#setmidlle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
